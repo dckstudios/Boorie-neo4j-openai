@@ -78,6 +78,14 @@ class UserController extends Controller
     {  
         $client=$this->connection();
         $name=$request->input('MSG');
+        $userlist = Usuario::first();
+        if($userlist!=''){
+            $userinfo=$userlist;
+        }
+        else{
+            $userinfo = array("username"=> "","usermail"=> "");
+           json_encode($userinfo);
+        }
         $result = OpenAI::chat()->create([
             'model' => 'gpt-3.5-turbo',
             'messages' => [
@@ -91,10 +99,18 @@ class UserController extends Controller
         $humanMsgList=array();
         $aiMsgList=array();
         $client->run("CREATE (h:Message{type: 'human',content:'".$name."'})-[:NEXT]->(a:Message{type:'ai',content: '".$response."'}) ");
-        return view('ai-chat-bot', compact('name','response','visibilityMsg','visibilityhistoria','humanMsgList','aiMsgList'));
+        return view('ai-chat-bot', compact('name','response','visibilityMsg','visibilityhistoria','humanMsgList','aiMsgList','userinfo'));
     }
     public function historyMesages(Request $request){
         $client=$this->connection();
+        $userlist = Usuario::first();
+        if($userlist!=''){
+            $userinfo=$userlist;
+        }
+        else{
+            $userinfo = array("username"=> "","usermail"=> "");
+           json_encode($userinfo);
+        }
         $allMessages=$client->run("MATCH (n:Message) RETURN n ");
         $visibilityMsg='display:none';
         $visibilityhistoria='';
@@ -111,7 +127,7 @@ class UserController extends Controller
         }
         $humanMsgList=array_slice(array_unique($humanMsgList),count(array_unique($humanMsgList))-4);
         $aiMsgList=array_slice(array_unique($aiMsgList),count(array_unique($aiMsgList))-4);
-        return view('ai-chat-bot', compact('visibilityhistoria','name','response','visibilityMsg','humanMsgList','aiMsgList'));  
+        return view('ai-chat-bot', compact('visibilityhistoria','name','response','visibilityMsg','humanMsgList','aiMsgList','userinfo'));  
     }
     
 
