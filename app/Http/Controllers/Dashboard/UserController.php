@@ -63,7 +63,16 @@ class UserController extends Controller
         $response='';
         $humanMsgList=array();
         $aiMsgList=array();
-        return view('ai-chat-bot',compact('name','response','visibilityMsg','visibilityhistoria','humanMsgList','aiMsgList'));
+        $userlist = Usuario::first();
+        if($userlist!=''){
+            $userinfo=$userlist;
+        }
+        else{
+            $userinfo = array("username"=> "","usermail"=> "");
+           json_encode($userinfo);
+        }
+        return view('ai-chat-bot',compact('name','response','visibilityMsg','visibilityhistoria','humanMsgList','aiMsgList','userinfo'));
+        
     }
     public function sendMesages(Request $request)
     {  

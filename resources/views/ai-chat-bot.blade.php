@@ -234,8 +234,8 @@
 									<img src="/images/user/user.jpg" alt="">
 								</div>
 								<div class="user_info">
-									<h2 class="user_name">Caden Smith<span>Free</span></h2>
-									<p><a href="mailto:cadmail@gmail.com" class="user_email">cadmail@gmail.com</a></p>
+									<h2 class="user_name"> {{ $userinfo['username'] }}<span>Free</span></h2>
+									<p><a href="mailto:cadmail@gmail.com" class="user_email"> {{ $userinfo['usermail'] }}</a></p>
 								</div>
 							</div>
 							<div class="user_nav">
