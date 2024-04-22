@@ -41,8 +41,11 @@ class UserController extends Controller
                            ->where('usermail', '=',$request->input('mailUsuario'))
                            ->get();
          if(isset($userlist[0]["usermail"])){
-           
-            return Redirect::to('/dashboard');
+           $nameuser=$userlist[0]["username"];
+           $mailuser=$userlist[0]["usermail"];
+           $userinfo = array('nameuser' => $nameuser, 'mailuser' => $mailuser);
+           json_encode($userinfo);
+            return Redirect::to('/dashboard')->with(['userinfo' => $userinfo]);
          }
          else {
             return view('signin');
@@ -60,7 +63,16 @@ class UserController extends Controller
         $response='';
         $humanMsgList=array();
         $aiMsgList=array();
-        return view('ai-chat-bot',compact('name','response','visibilityMsg','visibilityhistoria','humanMsgList','aiMsgList'));
+        $userlist = Usuario::first();
+        if($userlist!=''){
+            $userinfo=$userlist;
+        }
+        else{
+            $userinfo = array("username"=> "","usermail"=> "");
+           json_encode($userinfo);
+        }
+        return view('ai-chat-bot',compact('name','response','visibilityMsg','visibilityhistoria','humanMsgList','aiMsgList','userinfo'));
+        
     }
     public function sendMesages(Request $request)
     {  

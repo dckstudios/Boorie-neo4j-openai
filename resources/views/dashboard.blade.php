@@ -1,24 +1,3 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-  
-
-<!-- Mirrored from techwave-laravel-light.vercel.app/ai-chat-bot.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Apr 2024 10:45:50 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-<head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<meta name="description" content="TechWave">
-<meta name="author" content="SRBThemes">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-<title>AI Chat Bot - TechWave</title>
-
-
 <script>
 	if (!localStorage.frenify_skin) {
 		localStorage.frenify_skin = 'dark';
@@ -57,7 +36,7 @@
 <!-- !Moving Submenu -->
 
 <!-- Preloader -->
-<div class="techwave_fn_preloader">
+<div class="techwave_fn_preloader enabled">
 	<svg>
 		<circle class="first_circle" cx="50%" cy="50%" r="110"></circle>
 		<circle class="second_circle" cx="50%" cy="50%" r="110"></circle>
@@ -65,31 +44,9 @@
 </div>
 <!-- !Preloader -->
 
-<div class="techwave_fn_font">
-	<a class="font__closer_link fn__icon_button" href="#"><img src="svg/close.svg" alt="" class="fn__svg"></a>
-	<div class="font__closer"></div>
-	<div class="font__dialog">
-		<h3 class="title">Font Options</h3>
-		<label for="font_size">Font Size</label>
-		<select id="font_size">
-			<option value="10">10 px</option>
-			<option value="12">12 px</option>
-			<option value="14">14 px</option>
-			<option value="16" selected>16 px</option>
-			<option value="18">18 px</option>
-			<option value="20">20 px</option>
-			<option value="22">22 px</option>
-			<option value="24">24 px</option>
-			<option value="26">26 px</option>
-			<option value="28">28 px</option>
-		</select>
-		<a href="#" class="apply techwave_fn_button"><span>Apply</span></a>
-	</div>
-</div>
-
 
 <!-- MAIN WRAPPER -->
-<div class="techwave_fn_wrapper fn__has_sidebar">
+<div class="techwave_fn_wrapper">
 	<div class="techwave_fn_wrap">
 	
 	
@@ -97,7 +54,7 @@
 		<div class="techwave_fn_searchbar">
 			<div class="search__bar">
 				<input class="search__input" type="text" placeholder="Search here...">
-				<img src="svg/search.svg" alt="" class="fn__svg search__icon">
+				<img src="/svg/search.svg" alt="" class="fn__svg search__icon">
 				<a class="search__closer" href="#"><img src="/svg/close.svg" alt="" class="fn__svg"></a>
 			</div>
 			<div class="search__results">
@@ -125,12 +82,7 @@
 						<span class="count">120</span>
 						<span class="text">Tokens<br>Remain</span>
 					</span>
-					<form  method="GET" action="{{ route('mesages.history') }}">
-                                       
-                                            <button class="techwave_fn_button">Get History Chat</button>
-							            
-                                        </form>
-                    <div class="token__popup">
+					<div class="token__popup">
 						Resets in <span>19 hours.</span><br>
 						Daily limit is <span>200 tokens</span>
 					</div>
@@ -145,10 +97,10 @@
 					
 					<!-- Search (bar item) -->
 					<div class="bar__item bar__item_search">
-						<a href="#" class="item_opener">
+						<a href="#" class="item_opener fn__tooltip" title="Search">
 							<img src="/svg/search.svg" alt="" class="fn__svg">
 						</a>
-						<div class="item_popup">
+						<div class="item_popup" data-position="right">
 							<input type="text" placeholder="Search">
 						</div>
 					</div>
@@ -156,10 +108,10 @@
 					
 					<!-- Notification (bar item) -->
 					<div class="bar__item bar__item_notification has_notification">
-						<a href="#" class="item_opener">
-							<img src="/svg/bell.svg" alt="" class="fn__svg">
+						<a href="#" class="item_opener fn__tooltip" title="Notifications">
+							<img src="svg/bell.svg" alt="" class="fn__svg">
 						</a>
-						<div class="item_popup">
+						<div class="item_popup" data-position="right">
 							<div class="ntfc_header">
 								<h2 class="ntfc_title">Notifications</h2>
 								<a href="notifications.html">View All</a>
@@ -186,19 +138,19 @@
 					
 					<!-- Full Screen (bar item) -->
 					<div class="bar__item bar__item_fullscreen">
-						<a href="#" class="item_opener">
-							<img src="/svg/fullscreen.svg" alt="" class="fn__svg f_screen">
-							<img src="/svg/smallscreen.svg" alt="" class="fn__svg s_screen">
+						<a href="#" class="item_opener fn__tooltip" title="Full Screen">
+							<img src="svg/fullscreen.svg" alt="" class="fn__svg f_screen">
+							<img src="svg/smallscreen.svg" alt="" class="fn__svg s_screen">
 						</a>
 					</div>
 					<!-- !Full Screen (bar item) -->
 					
 					<!-- Language (bar item) -->
 					<div class="bar__item bar__item_language">
-						<a href="#" class="item_opener">
+						<a href="#" class="item_opener fn__tooltip" title="Language">
 							<img src="/svg/language.svg" alt="" class="fn__svg">
 						</a>
-						<div class="item_popup">
+						<div class="item_popup" data-position="right">
 							<ul>
 								<li>
 									<span class="active">English</span>
@@ -216,7 +168,7 @@
 					
 					<!-- Site Skin (bar item) -->
 					<div class="bar__item bar__item_skin">
-						<a href="#" class="item_opener">
+						<a href="#" class="item_opener fn__tooltip" title="Dark/Light">
 							<img src="/svg/sun.svg" alt="" class="fn__svg light_mode">
 							<img src="/svg/moon.svg" alt="" class="fn__svg dark_mode">
 						</a>
@@ -225,17 +177,19 @@
 					
 					<!-- User (bar item) -->
 					<div class="bar__item bar__item_user">
-						<a href="#" class="user_opener">
+						<a href="#" class="user_opener fn__tooltip" title="User Profile">
 							<img src="/images/user/user.jpg" alt="">
 						</a>
-						<div class="item_popup">
+						<div class="item_popup" data-position="right">
 							<div class="user_profile">
 								<div class="user_img">
 									<img src="/images/user/user.jpg" alt="">
 								</div>
 								<div class="user_info">
-									<h2 class="user_name"> {{ $userinfo['username'] }}<span>Free</span></h2>
-									<p><a href="mailto:cadmail@gmail.com" class="user_email"> {{ $userinfo['usermail'] }}</a></p>
+									@if (!is_null(session('userinfo')))
+									<h2 class="user_name"> {{ session('userinfo')['nameuser'] }}<span>Free</span></h2>
+									<p><a href="mailto:cadmail@gmail.com" class="user_email"> {{ session('userinfo')['mailuser'] }}</a></p>
+									@endif
 								</div>
 							</div>
 							<div class="user_nav">
@@ -313,11 +267,12 @@
 					<h2 class="group__title">Start Here</h2>
 					<ul class="group__list">
 						<li>
-							<a href="{{ url('/dashboard') }}" class="fn__tooltip menu__item" data-position="right" title="Home">
+							<a href="{{ url('/dashboard') }}" class="fn__tooltip active menu__item" data-position="right" title="Home">
 								<span class="icon"><img src="/svg/home.svg" alt="" class="fn__svg"></span>
 								<span class="text">Home</span>
 							</a>
 						</li>
+						
 					</ul>
 				</div>
 				<!-- !#1 navigation group -->
@@ -327,7 +282,7 @@
 					<h2 class="group__title">User Tools</h2>
 					<ul class="group__list">
 						<li>
-							<a href="{{ url('/mesages/ai-chat-bot') }}" class="fn__tooltip active menu__item" data-position="right" title="AI Chat Bot">
+							<a href="{{ url('/mesages/ai-chat-bot') }}" class="fn__tooltip menu__item" data-position="right" title="AI Chat Bot">
 								<span class="icon"><img src="/svg/chat.svg" alt="" class="fn__svg"></span>
 								<span class="text">AI Chat Bot</span>
 							</a>
@@ -394,132 +349,58 @@
 			<!-- PAGE (all pages go inside this div) -->
 			<div class="techwave_fn_page">
 				
-				<!-- AI Chat Bot Page -->
-				<div class="techwave_fn_aichatbot_page fn__chatbot">
-					
-					<div class="chat__page">
-					
-						<div class="font__trigger">
-							<span></span>
-						</div>
-						
-						<div class="fn__title_holder">
-							<div class="container">
-								<!-- Active chat title -->
-								<h1 class="title">Chat Bot Definition</h1>
-								<!-- !Active chat title -->
-							</div>
-						</div>
-						
-						<div class="container">
-							<div class="chat__list">
-
-								<div id="chat0" class="chat__item"></div>
-
-								<div class="chat__item active" id="chat1">
-                                <div class="chat__box bot__chat">
-										<div class="author"><span>Bot</span></div>
-										<div class="chat">
-											<p>Hola! ¿Cómo te puedo ayudar?</p>
-										</div>
-									</div>
-                                    <div style= "{{$visibilityMsg}}">
-                                        <div class="chat__box your__chat">
-                                            <div class="author"><span>You</span></div>
-                                            <div class="chat">
-                                                <p>{{$name}}</p>
-                                            </div>
-                                        </div>
-                                        <div class="chat__box bot__chat">
-                                            <div class="author"><span>Bot</span></div>
-                                            <div class="chat">
-                                                <p>{{$response}}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div style= "{{$visibilityhistoria}}">
-                                    @foreach ($humanMsgList as $k => $v)
-                                        <div class="chat__box your__chat">
-                                            <div class="author"><span>You</span></div>
-                                            <div class="chat">
-                                                <p>{{$humanMsgList[$k]}}</p>
-                                            </div>
-                                        </div>
-                                        <div class="chat__box bot__chat">
-                                            <div class="author"><span>Bot</span></div>
-                                            <div class="chat">
-                                                <p>{{$aiMsgList[$k]}}</p>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                    </div>
-								</div>
-
-
-
-							</div>
-						</div>
+				<!-- Home Page -->
+				<div class="techwave_fn_home">
+					<div class="section_home">
+						<div class="section_left">
 							
-						<form  method="GET" action="{{ route('mesages.send') }}">
-						<div class="chat__comment">
-							<div class="container">
-								<div class="fn__chat_comment">
-									<div class="new__chat">
-										<p>Ask it questions, engage in discussions, or simply enjoy a friendly chat.</p>
-									</div>
-									<textarea rows="1" class="fn__hidden_textarea" tabindex="-1"></textarea>
-									<textarea rows="1" placeholder="Send a message..." id="MSG" name="MSG"></textarea>
-									<button><img src="/svg/enter.svg" alt="" class="fn__svg"></button>
-								</div>
+							<!-- Title Shortcode -->
+							<div class="techwave_fn_title_holder">
+								<h1 class="title">Unleash Your Creativity with AI</h1>
+								<p class="desc">Generate your ideas into stunning visuals</p>
 							</div>
-						</div>
-						</form>
-					</div>
-					
-					<div class="chat__sidebar">
-						<div class="sidebar_header">
-							<a href="#chat0" class="fn__new_chat_link">
-								<span class="icon"></span>
-								<span class="text">New Chat</span>
-							</a>
-						</div>
-						<div class="sidebar_content">
-							<div class="chat__group new">
-								<h2 class="group__title">Today</h2>
-								<ul class="group__list">
-									<li class="group__item">
-										<div class="fn__chat_link active" href="#chat1">
-											<span class="text">Chat Bot Definition</span>
-											<input type="text" value="Chat Bot Definition">
-											<span class="options">
-												<button class="trigger"><span></span></button>
-												<span class="options__popup">
-													<span class="options__list">
-														<button class="edit">Edit</button>
-														<button class="delete">Delete</button>
-													</span>
+							<!-- !Title Shortcode -->
+							
+							<!-- Interactive List Shortcode -->
+							<div class="techwave_fn_interactive_list">
+								<ul>
+									<li>
+										<div class="item">
+											<a href="{{ url('/mesages/ai-chat-bot') }}">
+												<span class="icon">
+													<img src="/svg/chat.svg" alt="" class="fn__svg">
 												</span>
-											</span>
-											<span class="save_options">
-												<button class="save">
-													<img src="svg/check.svg" alt="" class="fn__svg">
-												</button>
-												<button class="cancel">
-													<img src="svg/close.svg" alt="" class="fn__svg">
-												</button>
-											</span>
+												<h2 class="title">AI Chat Bot</h2>
+												<p class="desc">An AI chatbot, short for artificial intelligence chatbot, is a computer program designed to simulate human-like conversations and provide automated responses to user queries or prompts. </p>
+												<span class="arrow"><img src="/svg/arrow.svg" alt="" class="fn__svg"></span>
+											</a>
 										</div>
 									</li>
-
-
-
 								</ul>
+							</div>
+							<!-- !Interactive List Shortcode -->
+							
+						</div>
+						<div class="section_right">
+							<div class="company_info">
+								<img src="/images/logo-desktop-full.png" alt="">
+								<p class="fn__animated_text">The official server of TECH-AI, a text-to-image AI where your imagination is the only limit. We’re building market-leading features that will give you greater control over your generations.</p>
+								<hr>
+								<div class="fn__members">
+									<div class="active item">
+										<span class="circle"></span>
+										<span class="text">1,154,694 Online</span>
+									</div>
+									<div class="item">
+										<span class="circle"></span>
+										<span class="text">77,345,912 Members</span>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-					
 				</div>
-				<!-- !AI Chat Bot Page -->
+				<!-- !Home Page -->
 				
 			</div>
 			<!-- !PAGE (all pages go inside this div) -->
@@ -552,13 +433,13 @@
 
 
 <!-- Scripts -->
-<script type="text/javascript" src="/js/jquery8a54.js"></script>
-<script type="text/javascript" src="/js/plugins8a54.js"></script>
+<script type="text/javascript" src="js/jquery8a54.js"></script>
+<script type="text/javascript" src="js/plugins8a54.js"></script>
 <!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->
-<script type="text/javascript" src="/js/init8a54.js"></script>
+<script type="text/javascript" src="js/init8a54.js"></script>
 <!-- !Scripts -->
 
 </body>
 
-<!-- Mirrored from techwave-laravel-light.vercel.app/ai-chat-bot.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Apr 2024 10:45:50 GMT -->
+<!-- Mirrored from techwave-laravel-light.vercel.app/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Apr 2024 10:45:39 GMT -->
 </html>
