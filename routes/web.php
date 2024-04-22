@@ -14,14 +14,18 @@ use App\Http\Controllers\Dashboard\UserController;
 |
 */
 Route::get('/', [UserController::class, 'loginUsuario']);
-Route::prefix('messages')->name('messages.')->group(function () {
-Route::get('/send', [UserController::class, 'sendMessages'])->name('send');
-Route::get('/history', [UserController::class, 'historyMessages'])->name('history');
-});
+
 Route::prefix('usuarios')->name('usuarios.')->group(function () {
 Route::get('/signup', [UserController::class, 'signupUsuario'])->name('signup');
 Route::get('/register', [UserController::class, 'registerUsuario'])->name('register');
 Route::get('/login', [UserController::class, 'loginUsuario'])->name('login');
 });
+Route::get('/dashboard', [UserController::class, 'dashboardRender']);
+Route::prefix('mesages')->name('mesages.')->group(function () {
+    Route::get('/ai-chat-bot', [UserController::class, 'chatbotRender']);
+    Route::get('/send', [UserController::class, 'sendMesages'])->name('send');
+    Route::get('/history', [UserController::class, 'historyMesages'])->name('history');
+    });
+
 
 
