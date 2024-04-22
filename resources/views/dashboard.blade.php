@@ -82,7 +82,6 @@
 						<span class="count">120</span>
 						<span class="text">Tokens<br>Remain</span>
 					</span>
-					<a href="pricing.html" class="token_upgrade techwave_fn_button"><span>Upgrade</span></a>
 					<div class="token__popup">
 						Resets in <span>19 hours.</span><br>
 						Daily limit is <span>200 tokens</span>
@@ -187,8 +186,10 @@
 									<img src="/images/user/user.jpg" alt="">
 								</div>
 								<div class="user_info">
+									@if (!is_null(session('userinfo')))
 									<h2 class="user_name"> {{ session('userinfo')['nameuser'] }}<span>Free</span></h2>
 									<p><a href="mailto:cadmail@gmail.com" class="user_email"> {{ session('userinfo')['mailuser'] }}</a></p>
+									@endif
 								</div>
 							</div>
 							<div class="user_nav">
