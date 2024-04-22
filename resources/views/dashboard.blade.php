@@ -187,8 +187,8 @@
 									<img src="/images/user/user.jpg" alt="">
 								</div>
 								<div class="user_info">
-									<h2 class="user_name">Caden Smith<span>Free</span></h2>
-									<p><a href="mailto:cadmail@gmail.com" class="user_email">cadmail@gmail.com</a></p>
+									<h2 class="user_name"> {{ session('userinfo')['nameuser'] }}<span>Free</span></h2>
+									<p><a href="mailto:cadmail@gmail.com" class="user_email"> {{ session('userinfo')['mailuser'] }}</a></p>
 								</div>
 							</div>
 							<div class="user_nav">
@@ -365,19 +365,7 @@
 								<ul>
 									<li>
 										<div class="item">
-											<a href="image-generation.html">
-												<span class="icon">
-													<img src="/svg/image.svg" alt="" class="fn__svg">
-												</span>
-												<h2 class="title">Image Generation</h2>
-												<p class="desc">This field of AI combines deep learning algorithms and generative models to create new images that resemble real-world photographs or exhibit creative and imaginative qualities.</p>
-												<span class="arrow"><img src="/svg/arrow.svg" alt="" class="fn__svg"></span>
-											</a>
-										</div>
-									</li>
-									<li>
-										<div class="item">
-											<a href="ai-chat-bot.html">
+											<a href="{{ url('/mesages/ai-chat-bot') }}">
 												<span class="icon">
 													<img src="/svg/chat.svg" alt="" class="fn__svg">
 												</span>
