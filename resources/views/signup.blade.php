@@ -1,10 +1,7 @@
 <html>
 <title>Boorie</title>
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <style>
   .body-style {background:url('http://cdn.wallpapersafari.com/13/6/Mpsg2b.jpg');background-size: 100% 110%; padding:90px;}
 </style>
