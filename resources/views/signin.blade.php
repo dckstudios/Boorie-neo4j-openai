@@ -2,7 +2,7 @@
 <title>Boorie</title>
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 <style>
-  .body-style {background-image: linear-gradient(315deg, #f39f86 0%, #f9d976 74%); padding:25px;}
+  .body-style {background:url('http://cdn.wallpapersafari.com/13/6/Mpsg2b.jpg');background-size: 100% 110%; padding:120px;}
 </style>
 <body class="body-style">
 <section >
