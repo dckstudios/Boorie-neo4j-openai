@@ -13,7 +13,8 @@
       <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
         <div class="animate__animated animate__zoomIn animate__slow card border border-light-subtle rounded-3 shadow-sm">
 
-          <div style="box-shadow:10px 10px 22px rgba(0, 0, 0, 0.2);" class="card-body p-3 p-md-4 p-xl-5">
+        <div style="box-shadow:10px 10px 22px rgba(0, 0, 0, 0.2);" class="card-body p-3 p-md-4 p-xl-5">
+        <div class="text-center mb-3">
 
               <a href="{{ url('/') }}">
                 <img src="/images/logo_boorie.png" alt="Boorie Logo" width="175" height="57">
