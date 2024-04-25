@@ -8,11 +8,9 @@ use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Laudis\Neo4j\Authentication\Authenticate;
 use Laudis\Neo4j\ClientBuilder;
-//use OpenAI\Laravel\Facades\OpenAI;
 use Illuminate\Support\Facades\Redirect;
 use Kambo\Langchain\LLMs\OpenAIChat;
 use Kambo\Langchain\Prompts\PromptTemplate;
-use Kambo\Langchain\Memory\ConversationBufferWindowMemory;
 use Kambo\Langchain\Memory\ChatMessageHistory;
 use Kambo\Langchain\Chains\LLMChain;
 
