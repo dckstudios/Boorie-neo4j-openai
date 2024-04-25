@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e466d7d73709a20c5d44792de8bc02e5",
+    "content-hash": "a4e141f8586654f8866e06274457950b",
     "packages": [
         {
             "name": "brick/math",
@@ -1112,17 +1112,79 @@
             "time": "2023-12-03T19:50:20+00:00"
         },
         {
-            "name": "laravel/framework",
-            "version": "v10.48.8",
+            "name": "kambo/langchain",
+            "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "8e9ab6da362f268170fe815127aed5ec7d303697"
+                "url": "https://github.com/kambo-1st/langchain-php.git",
+                "reference": "48f9db4b841a72eb2a42377758477a201c64a0b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/8e9ab6da362f268170fe815127aed5ec7d303697",
-                "reference": "8e9ab6da362f268170fe815127aed5ec7d303697",
+                "url": "https://api.github.com/repos/kambo-1st/langchain-php/zipball/48f9db4b841a72eb2a42377758477a201c64a0b4",
+                "reference": "48f9db4b841a72eb2a42377758477a201c64a0b4",
+                "shasum": ""
+            },
+            "require": {
+                "openai-php/client": "^0.3.5",
+                "php": "^8.1",
+                "psr/simple-cache": "^3.0",
+                "ramsey/uuid": "^4.7",
+                "stechstudio/backoff": "^1.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.13",
+                "phpunit/phpunit": "^9.5",
+                "slevomat/coding-standard": "^8.8"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kambo\\Langchain\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bohuslav Šimek",
+                    "email": "bohuslav@simek.si",
+                    "role": "Developer"
+                }
+            ],
+            "description": " ⚡ Building applications with LLMs through composability in PHP ⚡ ",
+            "homepage": "https://github.com/kambo/langchain",
+            "keywords": [
+                "kambo",
+                "langchain"
+            ],
+            "support": {
+                "issues": "https://github.com/kambo-1st/langchain-php/issues",
+                "source": "https://github.com/kambo-1st/langchain-php/tree/main"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/kambo",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-05-09T07:07:53+00:00"
+        },
+        {
+            "name": "laravel/framework",
+            "version": "v10.48.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "ad758500b47964d022addf119600a1b1b0230733"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ad758500b47964d022addf119600a1b1b0230733",
+                "reference": "ad758500b47964d022addf119600a1b1b0230733",
                 "shasum": ""
             },
             "require": {
@@ -1316,20 +1378,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-04-16T14:26:04+00:00"
+            "time": "2024-04-23T15:01:33+00:00"
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.1.19",
+            "version": "v0.1.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "0ab75ac3434d9f610c5691758a6146a3d1940c18"
+                "reference": "bf9a360c484976692de0f3792f30066f4f4b34a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/0ab75ac3434d9f610c5691758a6146a3d1940c18",
-                "reference": "0ab75ac3434d9f610c5691758a6146a3d1940c18",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/bf9a360c484976692de0f3792f30066f4f4b34a2",
+                "reference": "bf9a360c484976692de0f3792f30066f4f4b34a2",
                 "shasum": ""
             },
             "require": {
@@ -1371,9 +1433,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/prompts/issues",
-                "source": "https://github.com/laravel/prompts/tree/v0.1.19"
+                "source": "https://github.com/laravel/prompts/tree/v0.1.20"
             },
-            "time": "2024-04-16T14:20:35+00:00"
+            "time": "2024-04-18T00:45:25+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -1569,57 +1631,46 @@
         },
         {
             "name": "laudis/neo4j-php-client",
-            "version": "2.8.3",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neo4j-php/neo4j-php-client.git",
-                "reference": "fa2fadc33d09bc9dd54736acbe32613a91b2eee0"
+                "reference": "6416859bb323374e452957dc1708a4a6380876d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neo4j-php/neo4j-php-client/zipball/fa2fadc33d09bc9dd54736acbe32613a91b2eee0",
-                "reference": "fa2fadc33d09bc9dd54736acbe32613a91b2eee0",
+                "url": "https://api.github.com/repos/neo4j-php/neo4j-php-client/zipball/6416859bb323374e452957dc1708a4a6380876d7",
+                "reference": "6416859bb323374e452957dc1708a4a6380876d7",
                 "shasum": ""
             },
             "require": {
-                "ext-json": "*",
-                "laudis/typed-enum": "^1.3.2",
+                "laudis/typed-enum": "^1.1",
                 "php": "^7.4 || ^8.0",
+                "php-ds/php-ds": "1.*",
                 "php-http/discovery": "^1.13",
                 "php-http/message": "^1.0",
                 "php-http/message-factory": "^1.0",
                 "psr/http-client": "^1.0",
                 "psr/http-factory": "^1.0",
                 "psr/http-message": "^1.0",
-                "psr/simple-cache": "^1.0",
-                "stefanak-michal/bolt": "^4.1",
+                "stefanak-michal/bolt": "^2.5",
                 "symfony/polyfill-php80": "^1.2"
             },
-            "provide": {
-                "psr/simple-cache-implementation": "2.0|3.0"
-            },
             "require-dev": {
-                "cache/integration-tests": "dev-master",
-                "friendsofphp/php-cs-fixer": "3.8.0",
+                "friendsofphp/php-cs-fixer": "3.0.2",
                 "kriswallsmith/buzz": "^1.2",
-                "lctrs/psalm-psr-container-plugin": "^1.3",
-                "monolog/monolog": "^2.2",
                 "nyholm/psr7": "^1.3",
                 "nyholm/psr7-server": "^1.0",
-                "php-di/php-di": "^6.3",
                 "phpunit/phpunit": "^9.0",
                 "psalm/plugin-phpunit": "^0.15.1",
-                "psr/container": "^1.1",
-                "psr/log": "^1.1",
-                "symfony/uid": "^5.0",
-                "symfony/var-dumper": "^5.0",
-                "vimeo/psalm": "4.29.0",
+                "vimeo/psalm": "^4.7",
                 "vlucas/phpdotenv": "^5.0"
             },
             "suggest": {
-                "composer-runtime-api": "Install composer 2 for auto detection of version in user agent",
                 "ext-bcmath": "Needed to implement bolt protocol",
-                "ext-sysvsem": "Needed for enabling connection pooling between processes"
+                "ext-ds": "Needed for optimal performance",
+                "ext-json": "Needed to implement http protocol",
+                "ext-sockets": "Needed to implement bolt protocol"
             },
             "type": "library",
             "autoload": {
@@ -1650,9 +1701,9 @@
             ],
             "support": {
                 "issues": "https://github.com/neo4j-php/neo4j-php-client/issues",
-                "source": "https://github.com/neo4j-php/neo4j-php-client/tree/2.8.3"
+                "source": "https://github.com/neo4j-php/neo4j-php-client/tree/2.1.0"
             },
-            "time": "2023-01-24T15:11:48+00:00"
+            "time": "2021-09-02T09:36:21+00:00"
         },
         {
             "name": "laudis/typed-enum",
@@ -2595,39 +2646,31 @@
         },
         {
             "name": "openai-php/client",
-            "version": "v0.8.5",
+            "version": "v0.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openai-php/client.git",
-                "reference": "0f755fafa4d3f8d5c8ed964d3166d078fac0605a"
+                "reference": "0bb01e93fbd1f155af1c5a70caa53252dd13478f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openai-php/client/zipball/0f755fafa4d3f8d5c8ed964d3166d078fac0605a",
-                "reference": "0f755fafa4d3f8d5c8ed964d3166d078fac0605a",
+                "url": "https://api.github.com/repos/openai-php/client/zipball/0bb01e93fbd1f155af1c5a70caa53252dd13478f",
+                "reference": "0bb01e93fbd1f155af1c5a70caa53252dd13478f",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1.0",
-                "php-http/discovery": "^1.19.4",
-                "php-http/multipart-stream-builder": "^1.3.0",
-                "psr/http-client": "^1.0.3",
-                "psr/http-client-implementation": "^1.0.1",
-                "psr/http-factory-implementation": "*",
-                "psr/http-message": "^1.1.0|^2.0.0"
+                "guzzlehttp/guzzle": "^7.5.0",
+                "php": "^8.1.0"
             },
             "require-dev": {
-                "guzzlehttp/guzzle": "^7.8.1",
-                "guzzlehttp/psr7": "^2.6.2",
-                "laravel/pint": "^1.15.0",
-                "mockery/mockery": "^1.6.11",
-                "nunomaduro/collision": "^7.10.0",
-                "pestphp/pest": "^2.34.6",
-                "pestphp/pest-plugin-arch": "^2.7",
-                "pestphp/pest-plugin-type-coverage": "^2.8.1",
-                "phpstan/phpstan": "^1.10.66",
-                "rector/rector": "^1.0.4",
-                "symfony/var-dumper": "^6.4.4"
+                "laravel/pint": "^1.6.0",
+                "nunomaduro/collision": "^7.0.5",
+                "pestphp/pest": "^2.0.0",
+                "pestphp/pest-plugin-arch": "^2.0.0",
+                "pestphp/pest-plugin-mock": "^2.0.0",
+                "phpstan/phpstan": "^1.10.3",
+                "rector/rector": "^0.14.8",
+                "symfony/var-dumper": "^6.2.7"
             },
             "type": "library",
             "autoload": {
@@ -2646,9 +2689,6 @@
                 {
                     "name": "Nuno Maduro",
                     "email": "enunomaduro@gmail.com"
-                },
-                {
-                    "name": "Sandro Gehri"
                 }
             ],
             "description": "OpenAI PHP is a supercharged PHP API client that allows you to interact with the Open AI API",
@@ -2667,7 +2707,7 @@
             ],
             "support": {
                 "issues": "https://github.com/openai-php/client/issues",
-                "source": "https://github.com/openai-php/client/tree/v0.8.5"
+                "source": "https://github.com/openai-php/client/tree/v0.3.5"
             },
             "funding": [
                 {
@@ -2683,46 +2723,39 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-04-15T19:11:23+00:00"
+            "time": "2023-03-08T06:39:38+00:00"
         },
         {
-            "name": "openai-php/laravel",
-            "version": "v0.8.1",
+            "name": "php-ds/php-ds",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/openai-php/laravel.git",
-                "reference": "cdcf65d19a9a847cfdf249e7b1b6897ea6e9b650"
+                "url": "https://github.com/php-ds/polyfill.git",
+                "reference": "7b2c5f1843466d50769a0682ce6fa9ddaaa99cb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openai-php/laravel/zipball/cdcf65d19a9a847cfdf249e7b1b6897ea6e9b650",
-                "reference": "cdcf65d19a9a847cfdf249e7b1b6897ea6e9b650",
+                "url": "https://api.github.com/repos/php-ds/polyfill/zipball/7b2c5f1843466d50769a0682ce6fa9ddaaa99cb4",
+                "reference": "7b2c5f1843466d50769a0682ce6fa9ddaaa99cb4",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "^7.8.1",
-                "laravel/framework": "^9.46.0|^10.34.2|^11.0",
-                "openai-php/client": "^v0.8.0",
-                "php": "^8.1.0"
+                "ext-json": "*",
+                "php": ">=7.0"
+            },
+            "provide": {
+                "ext-ds": "1.5.0"
             },
             "require-dev": {
-                "laravel/pint": "^1.13.6",
-                "pestphp/pest": "^2.27.0",
-                "pestphp/pest-plugin-arch": "^2.4.1",
-                "phpstan/phpstan": "^1.10.47",
-                "symfony/var-dumper": "^6.4.0|^7.0.1"
+                "php-ds/tests": "^1.5"
+            },
+            "suggest": {
+                "ext-ds": "to improve performance and reduce memory usage"
             },
             "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "OpenAI\\Laravel\\ServiceProvider"
-                    ]
-                }
-            },
             "autoload": {
                 "psr-4": {
-                    "OpenAI\\Laravel\\": "src/"
+                    "Ds\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2731,48 +2764,21 @@
             ],
             "authors": [
                 {
-                    "name": "Nuno Maduro",
-                    "email": "enunomaduro@gmail.com"
+                    "name": "Rudi Theunissen",
+                    "email": "rudolf.theunissen@gmail.com"
                 }
             ],
-            "description": "OpenAI PHP for Laravel is a supercharged PHP API client that allows you to interact with the Open AI API",
             "keywords": [
-                "GPT-3",
-                "api",
-                "client",
-                "codex",
-                "dall-e",
-                "language",
-                "laravel",
-                "natural",
-                "openai",
+                "data structures",
+                "ds",
                 "php",
-                "processing",
-                "sdk"
+                "polyfill"
             ],
             "support": {
-                "issues": "https://github.com/openai-php/laravel/issues",
-                "source": "https://github.com/openai-php/laravel/tree/v0.8.1"
+                "issues": "https://github.com/php-ds/polyfill/issues",
+                "source": "https://github.com/php-ds/polyfill/tree/v1.5.0"
             },
-            "funding": [
-                {
-                    "url": "https://www.paypal.com/paypalme/enunomaduro",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/gehrisandro",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/nunomaduro",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/nunomaduro",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2023-12-05T14:08:09+00:00"
+            "time": "2023-12-19T16:52:21+00:00"
         },
         {
             "name": "php-http/discovery",
@@ -2976,62 +2982,6 @@
             },
             "abandoned": "psr/http-factory",
             "time": "2023-04-14T14:16:17+00:00"
-        },
-        {
-            "name": "php-http/multipart-stream-builder",
-            "version": "1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-http/multipart-stream-builder.git",
-                "reference": "f5938fd135d9fa442cc297dc98481805acfe2b6a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-http/multipart-stream-builder/zipball/f5938fd135d9fa442cc297dc98481805acfe2b6a",
-                "reference": "f5938fd135d9fa442cc297dc98481805acfe2b6a",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1 || ^8.0",
-                "php-http/discovery": "^1.15",
-                "psr/http-factory-implementation": "^1.0"
-            },
-            "require-dev": {
-                "nyholm/psr7": "^1.0",
-                "php-http/message": "^1.5",
-                "php-http/message-factory": "^1.0.2",
-                "phpunit/phpunit": "^7.5.15 || ^8.5 || ^9.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Http\\Message\\MultipartStream\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tobias Nyholm",
-                    "email": "tobias.nyholm@gmail.com"
-                }
-            ],
-            "description": "A builder class that help you create a multipart stream",
-            "homepage": "http://php-http.org",
-            "keywords": [
-                "factory",
-                "http",
-                "message",
-                "multipart stream",
-                "stream"
-            ],
-            "support": {
-                "issues": "https://github.com/php-http/multipart-stream-builder/issues",
-                "source": "https://github.com/php-http/multipart-stream-builder/tree/1.3.0"
-            },
-            "time": "2023-04-28T14:10:22+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -3471,25 +3421,25 @@
         },
         {
             "name": "psr/simple-cache",
-            "version": "1.0.1",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/simple-cache.git",
-                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b"
+                "reference": "764e0b3939f5ca87cb904f570ef9be2d78a07865"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
-                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/764e0b3939f5ca87cb904f570ef9be2d78a07865",
+                "reference": "764e0b3939f5ca87cb904f570ef9be2d78a07865",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=8.0.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -3504,7 +3454,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common interfaces for simple caching",
@@ -3516,9 +3466,9 @@
                 "simple-cache"
             ],
             "support": {
-                "source": "https://github.com/php-fig/simple-cache/tree/master"
+                "source": "https://github.com/php-fig/simple-cache/tree/3.0.0"
             },
-            "time": "2017-10-23T01:57:42+00:00"
+            "time": "2021-10-29T13:26:27+00:00"
         },
         {
             "name": "psy/psysh",
@@ -3825,31 +3775,72 @@
             "time": "2023-11-08T05:53:05+00:00"
         },
         {
-            "name": "stefanak-michal/bolt",
-            "version": "v4.1.1",
+            "name": "stechstudio/backoff",
+            "version": "1.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/neo4j-php/Bolt.git",
-                "reference": "3a549564ceaf21c652ca1c9989e15b71e9044300"
+                "url": "https://github.com/stechstudio/backoff.git",
+                "reference": "1758371711fa04c3a6c61b8e77707d5c6c1c188a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neo4j-php/Bolt/zipball/3a549564ceaf21c652ca1c9989e15b71e9044300",
-                "reference": "3a549564ceaf21c652ca1c9989e15b71e9044300",
+                "url": "https://api.github.com/repos/stechstudio/backoff/zipball/1758371711fa04c3a6c61b8e77707d5c6c1c188a",
+                "reference": "1758371711fa04c3a6c61b8e77707d5c6c1c188a",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "STS\\Backoff\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joseph Szobody",
+                    "email": "joseph@stechstudio.com"
+                }
+            ],
+            "description": "PHP library providing retry functionality with multiple backoff strategies and jitter support",
+            "support": {
+                "issues": "https://github.com/stechstudio/backoff/issues",
+                "source": "https://github.com/stechstudio/backoff/tree/1.3"
+            },
+            "time": "2024-03-29T12:04:30+00:00"
+        },
+        {
+            "name": "stefanak-michal/bolt",
+            "version": "v2.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/neo4j-php/Bolt.git",
+                "reference": "b123cde248e2654ca0609bf670f976b60d916290"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/neo4j-php/Bolt/zipball/b123cde248e2654ca0609bf670f976b60d916290",
+                "reference": "b123cde248e2654ca0609bf670f976b60d916290",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
-                "php": ">=7.4"
+                "php": ">=7.1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": ">=9"
+                "phpunit/phpunit": ">=7.5.0"
             },
             "suggest": {
-                "ext-openssl": "Needed when using StreamSocket connection class with SSL",
-                "ext-sockets": "Needed when using Socket connection class",
-                "laudis/neo4j-php-client": "Neo4j-PHP-Client is the most advanced PHP Client for Neo4j",
-                "stefanak-michal/neo4j-bolt-wrapper": "Wrapper for Neo4j PHP Bolt library to simplify usage."
+                "ext-sockets": "Needed when using the Bolt\\connection\\Socket",
+                "laudis/neo4j-php-client": "Neo4j-PHP-Client is the most advanced PHP Client for Neo4j"
             },
             "type": "library",
             "autoload": {
@@ -3868,7 +3859,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "PHP library for communication with Neo4j graph database over TCP socket with Bolt protocol specification",
+            "description": "Bolt protocol library over TCP socket",
             "homepage": "https://github.com/neo4j-php/Bolt",
             "keywords": [
                 "Socket",
@@ -3877,17 +3868,16 @@
                 "neo4j"
             ],
             "support": {
-                "docs": "https://www.neo4j.com/docs/bolt/current/",
                 "issues": "https://github.com/neo4j-php/Bolt/issues",
                 "source": "https://github.com/neo4j-php/Bolt"
             },
             "funding": [
                 {
-                    "url": "https://ko-fi.com/michalstefanak",
-                    "type": "ko-fi"
+                    "url": "https://www.paypal.me/MichalStefanak",
+                    "type": "paypal"
                 }
             ],
-            "time": "2022-07-19T10:06:56+00:00"
+            "time": "2022-01-15T23:24:57+00:00"
         },
         {
             "name": "symfony/console",
@@ -6578,16 +6568,16 @@
         },
         {
             "name": "laravel/pint",
-            "version": "v1.15.1",
+            "version": "v1.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/pint.git",
-                "reference": "5f288b5e79938cc72f5c298d384e639de87507c6"
+                "reference": "2c9f8004899815f3f0ee3cb28ef7281e2b589134"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/pint/zipball/5f288b5e79938cc72f5c298d384e639de87507c6",
-                "reference": "5f288b5e79938cc72f5c298d384e639de87507c6",
+                "url": "https://api.github.com/repos/laravel/pint/zipball/2c9f8004899815f3f0ee3cb28ef7281e2b589134",
+                "reference": "2c9f8004899815f3f0ee3cb28ef7281e2b589134",
                 "shasum": ""
             },
             "require": {
@@ -6598,13 +6588,13 @@
                 "php": "^8.1.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.52.1",
-                "illuminate/view": "^10.48.4",
-                "larastan/larastan": "^2.9.2",
+                "friendsofphp/php-cs-fixer": "^3.54.0",
+                "illuminate/view": "^10.48.8",
+                "larastan/larastan": "^2.9.5",
                 "laravel-zero/framework": "^10.3.0",
                 "mockery/mockery": "^1.6.11",
                 "nunomaduro/termwind": "^1.15.1",
-                "pestphp/pest": "^2.34.5"
+                "pestphp/pest": "^2.34.7"
             },
             "bin": [
                 "builds/pint"
@@ -6640,7 +6630,7 @@
                 "issues": "https://github.com/laravel/pint/issues",
                 "source": "https://github.com/laravel/pint"
             },
-            "time": "2024-04-02T14:28:47+00:00"
+            "time": "2024-04-23T15:42:34+00:00"
         },
         {
             "name": "laravel/sail",
@@ -7384,16 +7374,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.19",
+            "version": "10.5.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c726f0de022368f6ed103e452a765d3304a996a4"
+                "reference": "547d314dc24ec1e177720d45c6263fb226cc2ae3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c726f0de022368f6ed103e452a765d3304a996a4",
-                "reference": "c726f0de022368f6ed103e452a765d3304a996a4",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/547d314dc24ec1e177720d45c6263fb226cc2ae3",
+                "reference": "547d314dc24ec1e177720d45c6263fb226cc2ae3",
                 "shasum": ""
             },
             "require": {
@@ -7465,7 +7455,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.19"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.20"
             },
             "funding": [
                 {
@@ -7481,7 +7471,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-04-17T14:06:18+00:00"
+            "time": "2024-04-24T06:32:35+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -8401,16 +8391,16 @@
         },
         {
             "name": "spatie/backtrace",
-            "version": "1.5.3",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/backtrace.git",
-                "reference": "483f76a82964a0431aa836b6ed0edde0c248e3ab"
+                "reference": "8373b9d51638292e3bfd736a9c19a654111b4a23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/backtrace/zipball/483f76a82964a0431aa836b6ed0edde0c248e3ab",
-                "reference": "483f76a82964a0431aa836b6ed0edde0c248e3ab",
+                "url": "https://api.github.com/repos/spatie/backtrace/zipball/8373b9d51638292e3bfd736a9c19a654111b4a23",
+                "reference": "8373b9d51638292e3bfd736a9c19a654111b4a23",
                 "shasum": ""
             },
             "require": {
@@ -8418,6 +8408,7 @@
             },
             "require-dev": {
                 "ext-json": "*",
+                "laravel/serializable-closure": "^1.3",
                 "phpunit/phpunit": "^9.3",
                 "spatie/phpunit-snapshot-assertions": "^4.2",
                 "symfony/var-dumper": "^5.1"
@@ -8447,7 +8438,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/backtrace/tree/1.5.3"
+                "source": "https://github.com/spatie/backtrace/tree/1.6.1"
             },
             "funding": [
                 {
@@ -8459,7 +8450,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2023-06-28T12:59:17+00:00"
+            "time": "2024-04-24T13:22:11+00:00"
         },
         {
             "name": "spatie/flare-client-php",
@@ -8830,7 +8821,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "kambo/langchain": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
