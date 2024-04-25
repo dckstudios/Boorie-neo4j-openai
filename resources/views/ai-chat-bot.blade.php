@@ -442,13 +442,13 @@
                                         <div class="chat__box your__chat">
                                             <div class="author"><span>You</span></div>
                                             <div class="chat">
-                                                <p>{{$humanMsgList[$k]}}</p>
+                                                <p>{{$humanMsgList[$k]->content}}</p>
                                             </div>
                                         </div>
                                         <div class="chat__box bot__chat">
                                             <div class="author"><span>Bot</span></div>
                                             <div class="chat">
-                                                <p>{{$aiMsgList[$k]}}</p>
+                                                <p>{{$aiMsgList[$k]->content}}</p>
                                             </div>
                                         </div>
                                     @endforeach

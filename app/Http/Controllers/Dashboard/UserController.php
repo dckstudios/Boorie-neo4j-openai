@@ -8,8 +8,13 @@ use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Laudis\Neo4j\Authentication\Authenticate;
 use Laudis\Neo4j\ClientBuilder;
-use OpenAI\Laravel\Facades\OpenAI;
+//use OpenAI\Laravel\Facades\OpenAI;
 use Illuminate\Support\Facades\Redirect;
+use Kambo\Langchain\LLMs\OpenAIChat;
+use Kambo\Langchain\Prompts\PromptTemplate;
+use Kambo\Langchain\Memory\ConversationBufferWindowMemory;
+use Kambo\Langchain\Memory\ChatMessageHistory;
+use Kambo\Langchain\Chains\LLMChain;
 
 class UserController extends Controller
 {   
@@ -86,14 +91,13 @@ class UserController extends Controller
             $userinfo = array("username"=> "","usermail"=> "");
            json_encode($userinfo);
         }
-        $result = OpenAI::chat()->create([
-            'model' => 'gpt-3.5-turbo',
-            'messages' => [
-                ['role' => 'user', 'content' => $name],
-            ],
-        ]);
-        
-        $response=$result->choices[0]->message->content;
+        $llm = new OpenAIChat([ 'openai_api_key'=>getenv("OPENAI_API_KEY"),'model' => 'gpt-3.5-turbo','model' => 'gpt-3.5-turbo','temperature' => 0.9]);
+        $msg=$name;
+        $prompt = new PromptTemplate(
+        "Question:".$msg."\nAnswer: ",
+        );
+        $chain = new LLMChain($llm, $prompt, ['verbose' => False]);
+        $response=$chain->predict(['question' => $msg]);
         $visibilityMsg='';
         $visibilityhistoria='display:none';
         $humanMsgList=array();
@@ -116,17 +120,19 @@ class UserController extends Controller
         $visibilityhistoria='';
         $name='';
         $response='';
-        $humanMsgList = array();
-        $aiMsgList = array();
+        $humanMsgHistory=new ChatMessageHistory();
+        $aiMsgHistory=new ChatMessageHistory();
+        $allMessages=$client->run("MATCH (n:Message) RETURN n ");
         foreach ($allMessages as $allMessage) {
             if($allMessage["n"]["properties"]["type"]=="human"){
-            array_push($humanMsgList, $allMessage["n"]["properties"]["content"]);}
+                $humanMsgHistory->addUserMessage($allMessage["n"]["properties"]["content"]);}
             if($allMessage["n"]["properties"]["type"]=="ai"){
-            array_push($aiMsgList, $allMessage["n"]["properties"]["content"]);}
-
+                $aiMsgHistory->addAiMessage($allMessage["n"]["properties"]["content"]);}
         }
-        $humanMsgList=array_slice(array_unique($humanMsgList),count(array_unique($humanMsgList))-4);
-        $aiMsgList=array_slice(array_unique($aiMsgList),count(array_unique($aiMsgList))-4);
+        $humanMsgHistory=$humanMsgHistory->toArray();
+        $humanMsgList=array_slice($humanMsgHistory,count($humanMsgHistory)-4);
+        $aiMsgHistory=$aiMsgHistory->toArray();
+        $aiMsgList=array_slice($aiMsgHistory,count($aiMsgHistory)-4);
         return view('ai-chat-bot', compact('visibilityhistoria','name','response','visibilityMsg','humanMsgList','aiMsgList','userinfo'));  
     }
     
