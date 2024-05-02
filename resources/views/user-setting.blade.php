@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-  
+<html>
 
-<!-- Mirrored from techwave-laravel-light.vercel.app/ai-chat-bot.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Apr 2024 10:45:50 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,7 +9,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<title>AI Chat Bot - TechWave</title>
+<title>User Settings - TechWave</title>
 
 
 <script>
@@ -40,8 +33,8 @@
 <!-- !Google Fonts -->
 
 <!-- Styles -->
-<link type="text/css" rel="stylesheet" href="/css/plugins8a54.css" />
-<link type="text/css" rel="stylesheet" href="/css/style8a54.css" />
+<link type="text/css" rel="stylesheet" href="css/plugins8a54.css?ver=1.0.0" />
+<link type="text/css" rel="stylesheet" href="css/style8a54.css?ver=1.0.0" />
 <!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
 <!-- !Styles -->
 
@@ -65,31 +58,9 @@
 </div>
 <!-- !Preloader -->
 
-<div class="techwave_fn_font">
-	<a class="font__closer_link fn__icon_button" href="#"><img src="svg/close.svg" alt="" class="fn__svg"></a>
-	<div class="font__closer"></div>
-	<div class="font__dialog">
-		<h3 class="title">Font Options</h3>
-		<label for="font_size">Font Size</label>
-		<select id="font_size">
-			<option value="10">10 px</option>
-			<option value="12">12 px</option>
-			<option value="14">14 px</option>
-			<option value="16" selected>16 px</option>
-			<option value="18">18 px</option>
-			<option value="20">20 px</option>
-			<option value="22">22 px</option>
-			<option value="24">24 px</option>
-			<option value="26">26 px</option>
-			<option value="28">28 px</option>
-		</select>
-		<a href="#" class="apply techwave_fn_button"><span>Apply</span></a>
-	</div>
-</div>
-
 
 <!-- MAIN WRAPPER -->
-<div class="techwave_fn_wrapper fn__has_sidebar">
+<div class="techwave_fn_wrapper">
 	<div class="techwave_fn_wrap">
 	
 	
@@ -98,7 +69,7 @@
 			<div class="search__bar">
 				<input class="search__input" type="text" placeholder="Search here...">
 				<img src="svg/search.svg" alt="" class="fn__svg search__icon">
-				<a class="search__closer" href="#"><img src="/svg/close.svg" alt="" class="fn__svg"></a>
+				<a class="search__closer" href="#"><img src="svg/close.svg" alt="" class="fn__svg"></a>
 			</div>
 			<div class="search__results">
 				<!-- Results will come here (via ajax after the integration you made after purchase as it doesn't work in HTML) -->
@@ -125,12 +96,7 @@
 						<span class="count">120</span>
 						<span class="text">Tokens<br>Remain</span>
 					</span>
-					<form  method="GET" action="{{ route('mesages.history') }}">
-                                       
-                                            <button class="techwave_fn_button">Get History Chat</button>
-							            
-                                        </form>
-                    <div class="token__popup">
+					<div class="token__popup">
 						Resets in <span>19 hours.</span><br>
 						Daily limit is <span>200 tokens</span>
 					</div>
@@ -146,7 +112,7 @@
 					<!-- Search (bar item) -->
 					<div class="bar__item bar__item_search">
 						<a href="#" class="item_opener">
-							<img src="/svg/search.svg" alt="" class="fn__svg">
+							<img src="svg/search.svg" alt="" class="fn__svg">
 						</a>
 						<div class="item_popup">
 							<input type="text" placeholder="Search">
@@ -157,7 +123,7 @@
 					<!-- Notification (bar item) -->
 					<div class="bar__item bar__item_notification has_notification">
 						<a href="#" class="item_opener">
-							<img src="/svg/bell.svg" alt="" class="fn__svg">
+							<img src="svg/bell.svg" alt="" class="fn__svg">
 						</a>
 						<div class="item_popup">
 							<div class="ntfc_header">
@@ -187,8 +153,8 @@
 					<!-- Full Screen (bar item) -->
 					<div class="bar__item bar__item_fullscreen">
 						<a href="#" class="item_opener">
-							<img src="/svg/fullscreen.svg" alt="" class="fn__svg f_screen">
-							<img src="/svg/smallscreen.svg" alt="" class="fn__svg s_screen">
+							<img src="svg/fullscreen.svg" alt="" class="fn__svg f_screen">
+							<img src="svg/smallscreen.svg" alt="" class="fn__svg s_screen">
 						</a>
 					</div>
 					<!-- !Full Screen (bar item) -->
@@ -196,7 +162,7 @@
 					<!-- Language (bar item) -->
 					<div class="bar__item bar__item_language">
 						<a href="#" class="item_opener">
-							<img src="/svg/language.svg" alt="" class="fn__svg">
+							<img src="svg/language.svg" alt="" class="fn__svg">
 						</a>
 						<div class="item_popup">
 							<ul>
@@ -217,15 +183,14 @@
 					<!-- Site Skin (bar item) -->
 					<div class="bar__item bar__item_skin">
 						<a href="#" class="item_opener">
-							<img src="/svg/sun.svg" alt="" class="fn__svg light_mode">
-							<img src="/svg/moon.svg" alt="" class="fn__svg dark_mode">
+							<img src="svg/sun.svg" alt="" class="fn__svg light_mode">
+							<img src="svg/moon.svg" alt="" class="fn__svg dark_mode">
 						</a>
 					</div>
 					<!-- !Site Skin (bar item) -->
 					
 					<!-- User (bar item) -->
 					<div class="bar__item bar__item_user">
-						
 					@if(isset($userinfo['userimg']))
 						<a href="#" class="user_opener fn__tooltip" title="User Profile">
 							<img src="{{$userinfo['userimg']}}" alt="">
@@ -235,14 +200,14 @@
 							<img src="/images/user/user.jpg" alt="">
 						</a>
 					@endif
-						<div class="item_popup">
+						<div class="item_popup" data-position="right">
 							<div class="user_profile">
 								<div class="user_img">
-									@if(isset($userinfo['userimg']))
-										<img src="{{$userinfo['userimg']}}" alt="">
-									@else
-										<img src="/images/user/user.jpg" alt="">
-									@endif
+								@if(isset($userinfo['userimg']))
+									<img src="{{$userinfo['userimg']}}" alt="">
+								@else
+									<img src="/images/user/user.jpg" alt="">
+								@endif
 								</div>
 								<div class="user_info">
 									<h2 class="user_name"> {{ $userinfo['username'] }}<span>Free</span></h2>
@@ -295,8 +260,8 @@
 			
 			<div class="mobile_extra_closer"></div>
 			
-			<!-- logo (left panel) -->
-			<div class="leftpanel_logo">
+<!-- logo (left panel) -->
+<div class="leftpanel_logo">
 				<a href="{{ url('/dashboard') }}" class="fn_logo">
 					<span class="full_logo">
 						<img src="/images/logo_boorie.png" alt="" class="desktop_logo">
@@ -319,16 +284,17 @@
 			<!-- content (left panel) -->
 			<div class="leftpanel_content">
 			
-				<!-- #1 navigation group -->
-				<div class="nav_group">
+<!-- #1 navigation group -->
+<div class="nav_group">
 					<h2 class="group__title">Start Here</h2>
 					<ul class="group__list">
 						<li>
-							<a href="{{ url('/dashboard') }}" class="fn__tooltip menu__item" data-position="right" title="Home">
+							<a href="{{ url('/dashboard') }}" class="fn__tooltip active menu__item" data-position="right" title="Home">
 								<span class="icon"><img src="/svg/home.svg" alt="" class="fn__svg"></span>
 								<span class="text">Home</span>
 							</a>
 						</li>
+						
 					</ul>
 				</div>
 				<!-- !#1 navigation group -->
@@ -338,7 +304,7 @@
 					<h2 class="group__title">User Tools</h2>
 					<ul class="group__list">
 						<li>
-							<a href="{{ url('/mesages/ai-chat-bot') }}" class="fn__tooltip active menu__item" data-position="right" title="AI Chat Bot">
+							<a href="{{ url('/mesages/ai-chat-bot') }}" class="fn__tooltip menu__item" data-position="right" title="AI Chat Bot">
 								<span class="icon"><img src="/svg/chat.svg" alt="" class="fn__svg"></span>
 								<span class="text">AI Chat Bot</span>
 							</a>
@@ -353,15 +319,15 @@
 					<ul class="group__list">
 						<li>
 							<a href="pricing.html" class="fn__tooltip menu__item" data-position="right" title="Pricing">
-								<span class="icon"><img src="/svg/dollar.svg" alt="" class="fn__svg"></span>
+								<span class="icon"><img src="svg/dollar.svg" alt="" class="fn__svg"></span>
 								<span class="text">Pricing</span>
 							</a>
 						</li>
 						<li class="menu-item-has-children">
 							<a href="video-generation.html" class="fn__tooltip menu__item" title="FAQ &amp; Help" data-position="right">
-								<span class="icon"><img src="/svg/question.svg" alt="" class="fn__svg"></span>
+								<span class="icon"><img src="svg/question.svg" alt="" class="fn__svg"></span>
 								<span class="text">FAQ &amp; Help</span>
-								<span class="trigger"><img src="/svg/arrow.svg" alt="" class="fn__svg"></span>
+								<span class="trigger"><img src="svg/arrow.svg" alt="" class="fn__svg"></span>
 							</a>
 							<ul class="sub-menu">
 								<li>
@@ -382,8 +348,8 @@
 							</ul>
 						</li>
 						<li>
-							<a href="{{ url('/') }}" class="fn__tooltip menu__item" data-position="right" title="Log Out">
-								<span class="icon"><img src="/svg/logout.svg" alt="" class="fn__svg"></span>
+							<a href="sign-in.html" class="fn__tooltip menu__item" data-position="right" title="Log Out">
+								<span class="icon"><img src="svg/logout.svg" alt="" class="fn__svg"></span>
 								<span class="text">Log Out</span>
 							</a>
 						</li>
@@ -405,132 +371,96 @@
 			<!-- PAGE (all pages go inside this div) -->
 			<div class="techwave_fn_page">
 				
-				<!-- AI Chat Bot Page -->
-				<div class="techwave_fn_aichatbot_page fn__chatbot">
-					
-					<div class="chat__page">
-					
-						<div class="font__trigger">
-							<span></span>
-						</div>
-						
-						<div class="fn__title_holder">
-							<div class="container">
-								<!-- Active chat title -->
-								<h1 class="title">Chat Bot Definition</h1>
-								<!-- !Active chat title -->
-							</div>
-						</div>
-						
-						<div class="container">
-							<div class="chat__list">
-
-								<div id="chat0" class="chat__item"></div>
-
-								<div class="chat__item active" id="chat1">
-                                <div class="chat__box bot__chat">
-										<div class="author"><span>Bot</span></div>
-										<div class="chat">
-											<p>Hola! ¿Cómo te puedo ayudar?</p>
-										</div>
-									</div>
-                                    <div style= "{{$visibilityMsg}}">
-                                        <div class="chat__box your__chat">
-                                            <div class="author"><span>You</span></div>
-                                            <div class="chat">
-                                                <p>{{$name}}</p>
-                                            </div>
-                                        </div>
-                                        <div class="chat__box bot__chat">
-                                            <div class="author"><span>Bot</span></div>
-                                            <div class="chat">
-                                                <p>{{$response}}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div style= "{{$visibilityhistoria}}">
-                                    @foreach ($humanMsgList as $k => $v)
-                                        <div class="chat__box your__chat">
-                                            <div class="author"><span>You</span></div>
-                                            <div class="chat">
-                                                <p>{{$humanMsgList[$k]->content}}</p>
-                                            </div>
-                                        </div>
-                                        <div class="chat__box bot__chat">
-                                            <div class="author"><span>Bot</span></div>
-                                            <div class="chat">
-                                                <p>{{$aiMsgList[$k]->content}}</p>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                    </div>
-								</div>
-
-
-
-							</div>
-						</div>
-							
-						<form  method="GET" action="{{ route('mesages.send') }}">
-						<div class="chat__comment">
-							<div class="container">
-								<div class="fn__chat_comment">
-									<div class="new__chat">
-										<p>Ask it questions, engage in discussions, or simply enjoy a friendly chat.</p>
-									</div>
-									<textarea rows="1" class="fn__hidden_textarea" tabindex="-1"></textarea>
-									<textarea rows="1" placeholder="Send a message..." id="MSG" name="MSG"></textarea>
-									<button><img src="/svg/enter.svg" alt="" class="fn__svg"></button>
-								</div>
-							</div>
-						</div>
-						</form>
+				<!-- User Settings Page -->
+				<div class="techwave_fn_user_settings_page">
+					<!-- Page Title -->
+					<div class="techwave_fn_pagetitle">
+						<h2 class="title">Settings</h2>
 					</div>
-					
-					<div class="chat__sidebar">
-						<div class="sidebar_header">
-							<a href="#chat0" class="fn__new_chat_link">
-								<span class="icon"></span>
-								<span class="text">New Chat</span>
-							</a>
-						</div>
-						<div class="sidebar_content">
-							<div class="chat__group new">
-								<h2 class="group__title">Today</h2>
-								<ul class="group__list">
-									<li class="group__item">
-										<div class="fn__chat_link active" href="#chat1">
-											<span class="text">Chat Bot Definition</span>
-											<input type="text" value="Chat Bot Definition">
-											<span class="options">
-												<button class="trigger"><span></span></button>
-												<span class="options__popup">
-													<span class="options__list">
-														<button class="edit">Edit</button>
-														<button class="delete">Delete</button>
-													</span>
+					<!-- !Page Title -->
+				
+					<div class="container small">
+						<div class="techwave_fn_user_settings">
+							<form  method="POST" action="{{ route('settings.update-userinfo') }}" enctype="multipart/form-data">
+							@csrf	
+                            <div class="user__settings">
+									<div class="settings_left">
+									
+										<!-- Upload Shortcode -->
+										<label class="fn__upload">
+											<span onclick="showInputImage()" class="upload_content">
+											<div id="boxUpload">	
+											<img src="svg/upload.svg" alt="" class="fn__svg">
+												</br>
+												<span class="title">Drag & Drop a Image</span>
+												<span class="fn__lined_text">
+													<span class="line"></span>
+													<span class="text">Or</span>
+													<span class="line"></span>
 												</span>
-											</span>
-											<span class="save_options">
-												<button class="save">
-													<img src="svg/check.svg" alt="" class="fn__svg">
-												</button>
-												<button class="cancel">
+												<span class="title">Browse</span>
+												<span >Supports JPG, JPEG, and PNG</span>
+											</div>
+											<div id="ImageUpload">
+												<a href="#" class="fn__closer fn__icon_button">
 													<img src="svg/close.svg" alt="" class="fn__svg">
-												</button>
+												</a>
+												
+												<img src="{{$userinfo['userimg']}}" alt="" class="preview_img">
+											</div>
+											
 											</span>
+											
+											
+											
+										</label>
+										
+										<!-- !Upload Shortcode -->
+									
+									</div>
+
+									<div class="settings_right">
+										<div class="item">
+											<label class="input_label" for="username">Username</label>
+											<div class="input_item">
+
+												<input class="input" type="text" name="nameuser" id="nameuser" value="{{ $userinfo['username'] }}">
+											</div>
 										</div>
-									</li>
+										<div class="item">
+											<label class="input_label" for="email">Email Address</label>
+											<div class="input_item">
+												<input class="input" type="text" name="emailuser" id="emailuser" value="{{ $userinfo['usermail'] }}">
+											</div>
+										</div>
+										<div class="item">
+											<label class="input_label" for="password">Password</label>
+											<div class="input_item">
+												<input class="input" type="password" name="pwduser" id="pwduser" value="{{ $userinfo['password'] }}">
+											</div>
+										</div>
+										<div id="inputImage" class="item">
+											<label class="input_label" for="image">Image URL</label>
+											<div class="input_item">
+												<input class="input" type="text" name="image" id="image" onfocusout="showPhoto()" accept="image/*">
+											</div>
+										</div>
+										
 
-
-
-								</ul>
-							</div>
+										<div class="item">
+											
+                                                <button class="techwave_fn_button">Save Changes</button>
+											
+										</div>
+                                        <input type="text" id="user_email" name="user_email" style="display: none" value="{{ $userinfo['usermail'] }}" />
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 					
 				</div>
-				<!-- !AI Chat Bot Page -->
+				<!-- !User Settings Page -->
 				
 			</div>
 			<!-- !PAGE (all pages go inside this div) -->
@@ -563,13 +493,31 @@
 
 
 <!-- Scripts -->
-<script type="text/javascript" src="/js/jquery8a54.js"></script>
-<script type="text/javascript" src="/js/plugins8a54.js"></script>
+<script type="text/javascript" src="js/jquery8a54.js?ver=1.0.0"></script>
+<script type="text/javascript" src="js/plugins8a54.js?ver=1.0.0"></script>
 <!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->
-<script type="text/javascript" src="/js/init8a54.js"></script>
+<script type="text/javascript" src="js/init8a54.js?ver=1.0.0"></script>
 <!-- !Scripts -->
 
 </body>
 
-<!-- Mirrored from techwave-laravel-light.vercel.app/ai-chat-bot.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Apr 2024 10:45:50 GMT -->
+<!-- Mirrored from techwave-laravel-light.vercel.app/user-settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Apr 2024 10:45:43 GMT -->
 </html>
+<script>
+	document.getElementById("ImageUpload").style.visibility = "hidden";
+	document.getElementById("inputImage").style.visibility = "hidden";
+	function showPhoto() {
+		var x = document.getElementById("image").value;
+  		if (x != "") {
+			document.getElementById("ImageUpload").style.visibility = "visible";
+			document.getElementById("boxUpload").remove();
+		}
+		else{
+			document.getElementById("boxUpload").add();
+			document.getElementById("ImageUpload").style.visibility = "hidden";
+		}	
+	}
+	function showInputImage(){
+		document.getElementById("inputImage").style.visibility = "visible";
+	}
+</script>

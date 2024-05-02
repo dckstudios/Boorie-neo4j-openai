@@ -21,6 +21,13 @@ Route::get('/register', [UserController::class, 'registerUsuario'])->name('regis
 Route::get('/login', [UserController::class, 'loginUsuario'])->name('login');
 });
 Route::get('/dashboard', [UserController::class, 'dashboardRender']);
+
+Route::get('/settings', [UserController::class, 'settingsRender']);
+
+Route::prefix('settings')->name('settings.')->group(function () {
+    Route::get('/settings', [UserController::class, 'settingsRender'])->name('settings');
+    Route::post('/update-userinfo', [UserController::class, 'updateUserInfo'])->name('update-userinfo');
+    });
 Route::prefix('mesages')->name('mesages.')->group(function () {
     Route::get('/ai-chat-bot', [UserController::class, 'chatbotRender']);
     Route::get('/send', [UserController::class, 'sendMesages'])->name('send');
