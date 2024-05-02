@@ -177,13 +177,23 @@
 					
 					<!-- User (bar item) -->
 					<div class="bar__item bar__item_user">
+					@if(isset($userinfo['userimg']))
 						<a href="#" class="user_opener fn__tooltip" title="User Profile">
+							<img src="{{$userinfo['userimg']}}" alt="">
+						</a>
+					@else
+					<a href="#" class="user_opener fn__tooltip" title="User Profile">
 							<img src="/images/user/user.jpg" alt="">
 						</a>
+					@endif
 						<div class="item_popup" data-position="right">
 							<div class="user_profile">
 								<div class="user_img">
+								@if(isset($userinfo['userimg']))
+									<img src="{{$userinfo['userimg']}}" alt="">
+								@else
 									<img src="/images/user/user.jpg" alt="">
+								@endif
 								</div>
 								<div class="user_info">
 									@if (!is_null(session('userinfo')))
@@ -201,7 +211,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="user-settings.html">
+										<a href="{{url('/settings')}}">
 											<span class="icon"><img src="/svg/setting.svg" alt="" class="fn__svg"></span>
 											<span class="text">Settings</span>
 										</a>

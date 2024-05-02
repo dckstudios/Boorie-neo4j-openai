@@ -8,13 +8,12 @@ use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Laudis\Neo4j\Authentication\Authenticate;
 use Laudis\Neo4j\ClientBuilder;
-//use OpenAI\Laravel\Facades\OpenAI;
 use Illuminate\Support\Facades\Redirect;
 use Kambo\Langchain\LLMs\OpenAIChat;
 use Kambo\Langchain\Prompts\PromptTemplate;
-use Kambo\Langchain\Memory\ConversationBufferWindowMemory;
 use Kambo\Langchain\Memory\ChatMessageHistory;
 use Kambo\Langchain\Chains\LLMChain;
+
 
 class UserController extends Controller
 {   
@@ -37,7 +36,8 @@ class UserController extends Controller
         Usuario::create([
             'username' =>  $request->input('nombreUsuario'),
             'usermail' => $request->input('mailUsuario'),
-            'password' => $request->input('passwordUsuario')
+            'password' => $request->input('passwordUsuario'),
+            'userimg'  => ''
         ]);
         return view('signin');
     }
@@ -58,7 +58,15 @@ class UserController extends Controller
         
     }
     public function dashboardRender(){
-        return view('dashboard');
+        $userlist = Usuario::first();
+        if($userlist!=''){
+            $userinfo=$userlist;
+        }
+        else{
+            $userinfo = array("username"=> "","usermail"=> "");
+           json_encode($userinfo);
+        }
+        return view('dashboard',compact('userinfo'));
     }
 
     public function chatbotRender(){
@@ -134,6 +142,32 @@ class UserController extends Controller
         $aiMsgHistory=$aiMsgHistory->toArray();
         $aiMsgList=array_slice($aiMsgHistory,count($aiMsgHistory)-4);
         return view('ai-chat-bot', compact('visibilityhistoria','name','response','visibilityMsg','humanMsgList','aiMsgList','userinfo'));  
+    }
+
+    public function settingsRender(){
+        $userlist = Usuario::first();
+        if($userlist!=''){
+            $userinfo=$userlist;
+        }
+        else{
+            $userinfo = array("username"=> "","usermail"=> "");
+           json_encode($userinfo);
+        }
+
+        return view('user-setting',compact('userinfo'));
+    }
+
+    public function updateUserInfo(Request $request){
+        
+        $Listusuario = Usuario::where('usermail',$request->input('user_email'))->first();
+        $Listusuario->update([
+            'username' =>  $request->input('nameuser'),
+            'usermail' => $request->input('emailuser'),
+            'password' => $request->input('pwduser'),
+            'userimg'  =>$request->input('image')
+        ]);
+    
+        return redirect('/settings');
     }
     
 
