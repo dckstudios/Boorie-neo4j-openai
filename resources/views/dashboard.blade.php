@@ -211,7 +211,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="{{url('/settings')}}">
+										<a href="{{url('/settings?test=false')}}">
 											<span class="icon"><img src="/svg/setting.svg" alt="" class="fn__svg"></span>
 											<span class="text">Settings</span>
 										</a>
@@ -380,8 +380,12 @@
 							<div class="techwave_fn_interactive_list">
 								<ul>
 									<li>
+									<form id="myform2" method="get" action="{{ route('mesages.ai-chat-bot') }}">
+										@if(isset(session('userinfo')['mailuser']))
+											<input type="text" id="user_mail" name="user_mail" value="{{ session('userinfo')['mailuser'] }}" hidden>
+										@endif
 										<div class="item">
-											<a href="{{ url('/mesages/ai-chat-bot') }}">
+											<a onclick="document.getElementById('myform2').submit()">
 												<span class="icon">
 													<img src="/svg/chat.svg" alt="" class="fn__svg">
 												</span>
@@ -390,6 +394,7 @@
 												<span class="arrow"><img src="/svg/arrow.svg" alt="" class="fn__svg"></span>
 											</a>
 										</div>
+									</form>
 									</li>
 								</ul>
 							</div>
