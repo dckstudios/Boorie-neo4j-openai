@@ -152,8 +152,8 @@ class UserController extends Controller
             $userinfo = array("username"=> "","usermail"=> "");
            json_encode($userinfo);
         }
-
-        return view('user-setting',compact('userinfo'));
+        $test=explode("=", urldecode($_SERVER["REQUEST_URI"]))[1];
+        return view('user-setting',compact('userinfo','test'));
     }
 
     public function updateUserInfo(Request $request){
@@ -166,7 +166,7 @@ class UserController extends Controller
             'userimg'  =>$request->input('image')
         ]);
     
-        return redirect('/settings');
+        return redirect('/settings?test=true&userimg='.$request->input('image'));
     }
     
 

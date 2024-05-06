@@ -211,7 +211,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="{{url('/settings')}}">
+										<a href="{{url('/settings?test=false')}}">
 											<span class="icon"><img src="/svg/setting.svg" alt="" class="fn__svg"></span>
 											<span class="text">Settings</span>
 										</a>

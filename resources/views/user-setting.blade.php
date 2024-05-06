@@ -223,7 +223,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="{{url('/settings')}}">
+										<a href="{{url('/settings?test=false')}}">
 											<span class="icon"><img src="/svg/setting.svg" alt="" class="fn__svg"></span>
 											<span class="text">Settings</span>
 										</a>
@@ -406,7 +406,7 @@
 													<img src="svg/close.svg" alt="" class="fn__svg">
 												</a>
 												
-												<img src="{{$userinfo['userimg']}}" alt="" class="preview_img">
+												<img src="" id="ImageLogin" name="ImageLogin" alt="" class="preview_img">
 											</div>
 											
 											</span>
@@ -442,7 +442,7 @@
 										<div id="inputImage" class="item">
 											<label class="input_label" for="image">Image URL</label>
 											<div class="input_item">
-												<input class="input" type="text" name="image" id="image" onfocusout="showPhoto()" accept="image/*">
+												<input class="input" type="text" name="image" id="image"  accept="image/*">
 											</div>
 										</div>
 										
@@ -504,19 +504,23 @@
 <!-- Mirrored from techwave-laravel-light.vercel.app/user-settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Apr 2024 10:45:43 GMT -->
 </html>
 <script>
+	
+	
+	
 	document.getElementById("ImageUpload").style.visibility = "hidden";
 	document.getElementById("inputImage").style.visibility = "hidden";
-	function showPhoto() {
-		var x = document.getElementById("image").value;
-  		if (x != "") {
+	
+		var test=JSON.parse("{{ request()->get('test')}}");
+  		if (test == true) {
 			document.getElementById("ImageUpload").style.visibility = "visible";
+			document.getElementById("ImageLogin").src="{{ request()->get('userimg')}}";
 			document.getElementById("boxUpload").remove();
 		}
 		else{
 			document.getElementById("boxUpload").add();
 			document.getElementById("ImageUpload").style.visibility = "hidden";
 		}	
-	}
+	
 	function showInputImage(){
 		document.getElementById("inputImage").style.visibility = "visible";
 	}
