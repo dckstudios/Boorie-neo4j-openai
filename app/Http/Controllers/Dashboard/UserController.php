@@ -42,13 +42,14 @@ class UserController extends Controller
         return view('signin');
     }
     public function loginUsuario(Request $request){
-        $userlist = Usuario::select('username', 'usermail', 'password')
+        $userlist = Usuario::select('username', 'usermail', 'password','userimg')
                            ->where('usermail', '=',$request->input('mailUsuario'))
                            ->get();
          if(isset($userlist[0]["usermail"])){
            $nameuser=$userlist[0]["username"];
            $mailuser=$userlist[0]["usermail"];
-           $userinfo = array('nameuser' => $nameuser, 'mailuser' => $mailuser);
+           $imguser=$userlist[0]["userimg"];
+           $userinfo = array('nameuser' => $nameuser, 'mailuser' => $mailuser,'imguser' => $imguser);
            json_encode($userinfo);
             return Redirect::to('/dashboard')->with(['userinfo' => $userinfo]);
          }
@@ -57,26 +58,20 @@ class UserController extends Controller
          }
         
     }
-    public function dashboardRender(){
-        $userlist = Usuario::first();
-        if($userlist!=''){
-            $userinfo=$userlist;
-        }
-        else{
-            $userinfo = array("username"=> "","usermail"=> "");
-           json_encode($userinfo);
-        }
-        return view('dashboard',compact('userinfo'));
+    public function dashboardRender(){    
+        return view('dashboard');
     }
 
-    public function chatbotRender(){
+    public function chatbotRender(Request $request){
         $visibilityMsg='display:none';
         $visibilityhistoria='display:none';
         $name='';
         $response='';
         $humanMsgList=array();
         $aiMsgList=array();
-        $userlist = Usuario::first();
+        if(isset(explode("=", urldecode($_SERVER["REQUEST_URI"]))[1])){
+        $mail=explode("=", urldecode($_SERVER["REQUEST_URI"]))[1];
+        $userlist = Usuario::where('usermail',$mail)->first();
         if($userlist!=''){
             $userinfo=$userlist;
         }
@@ -84,6 +79,10 @@ class UserController extends Controller
             $userinfo = array("username"=> "","usermail"=> "");
            json_encode($userinfo);
         }
+        }
+        else{$userinfo = array("username"=> "","usermail"=> "");
+            json_encode($userinfo);}
+        
         return view('ai-chat-bot',compact('name','response','visibilityMsg','visibilityhistoria','humanMsgList','aiMsgList','userinfo'));
         
     }

@@ -29,7 +29,7 @@ Route::prefix('settings')->name('settings.')->group(function () {
     Route::post('/update-userinfo', [UserController::class, 'updateUserInfo'])->name('update-userinfo');
     });
 Route::prefix('mesages')->name('mesages.')->group(function () {
-    Route::get('/ai-chat-bot', [UserController::class, 'chatbotRender']);
+    Route::get('/ai-chat-bot', [UserController::class, 'chatbotRender'])->name('ai-chat-bot');
     Route::get('/send', [UserController::class, 'sendMesages'])->name('send');
     Route::get('/history', [UserController::class, 'historyMesages'])->name('history');
     });

@@ -177,9 +177,9 @@
 					
 					<!-- User (bar item) -->
 					<div class="bar__item bar__item_user">
-					@if(isset($userinfo['userimg']))
+					@if(isset(session('userinfo')['imguser']))
 						<a href="#" class="user_opener fn__tooltip" title="User Profile">
-							<img src="{{$userinfo['userimg']}}" alt="">
+							<img src="{{session('userinfo')['imguser']}}" alt="">
 						</a>
 					@else
 					<a href="#" class="user_opener fn__tooltip" title="User Profile">
@@ -189,8 +189,8 @@
 						<div class="item_popup" data-position="right">
 							<div class="user_profile">
 								<div class="user_img">
-								@if(isset($userinfo['userimg']))
-									<img src="{{$userinfo['userimg']}}" alt="">
+								@if(isset(session('userinfo')['imguser']))
+									<img src="{{session('userinfo')['imguser']}}" alt="">
 								@else
 									<img src="/images/user/user.jpg" alt="">
 								@endif
@@ -292,10 +292,15 @@
 					<h2 class="group__title">User Tools</h2>
 					<ul class="group__list">
 						<li>
-							<a href="{{ url('/mesages/ai-chat-bot') }}" class="fn__tooltip menu__item" data-position="right" title="AI Chat Bot">
+							<form id="myform" method="get" action="{{ route('mesages.ai-chat-bot') }}">
+							@if(isset(session('userinfo')['mailuser']))
+								<input type="text" id="user_mail" name="user_mail" value="{{ session('userinfo')['mailuser'] }}" hidden>
+							@endif
+							<a class="fn__tooltip menu__item" data-position="right" title="AI Chat Bot" onclick="document.getElementById('myform').submit()">
 								<span class="icon"><img src="/svg/chat.svg" alt="" class="fn__svg"></span>
-								<span class="text">AI Chat Bot</span>
+								<span class="text" >AI Chat Bot</span>
 							</a>
+							</form>
 						</li>
 					</ul>
 				</div>
