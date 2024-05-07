@@ -348,7 +348,7 @@
 							</ul>
 						</li>
 						<li>
-							<a href="sign-in.html" class="fn__tooltip menu__item" data-position="right" title="Log Out">
+							<a href="{{ url('/') }}" class="fn__tooltip menu__item" data-position="right" title="Log Out">
 								<span class="icon"><img src="svg/logout.svg" alt="" class="fn__svg"></span>
 								<span class="text">Log Out</span>
 							</a>
