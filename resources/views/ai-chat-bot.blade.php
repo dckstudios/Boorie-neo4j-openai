@@ -16,7 +16,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<title>AI Chat Bot - TechWave</title>
+<title>AI Chat Bot - Boorie</title>
 
 
 <script>

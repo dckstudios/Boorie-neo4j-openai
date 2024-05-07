@@ -9,7 +9,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<title>User Settings - TechWave</title>
+<title>User Settings - Boorie</title>
 
 
 <script>

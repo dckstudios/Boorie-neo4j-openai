@@ -23,7 +23,7 @@
 <link type="text/css" rel="stylesheet" href="/css/style8a54.css" />
 <!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
 <!-- !Styles -->
-
+<title>Dashboard - Boorie</title>
 </head>
 
 <body>
