@@ -15,6 +15,7 @@ use Kambo\Langchain\Memory\ChatMessageHistory;
 use Kambo\Langchain\Chains\LLMChain;
 
 
+
 class UserController extends Controller
 {   
     public function connection(){
@@ -146,13 +147,15 @@ class UserController extends Controller
     public function settingsRender(){
         $userlist = Usuario::first();
         if($userlist!=''){
-            $userinfo=$userlist;
+            $userinfo=array("username"=> $userlist["username"],"usermail"=> $userlist["usermail"],"userimg"=> $userlist["userimg"],"password"=>base64_decode($userlist["password"]));
         }
         else{
             $userinfo = array("username"=> "","usermail"=> "");
            json_encode($userinfo);
         }
         $test=explode("=", urldecode($_SERVER["REQUEST_URI"]))[1];
+        
+        
         return view('user-setting',compact('userinfo','test'));
     }
 

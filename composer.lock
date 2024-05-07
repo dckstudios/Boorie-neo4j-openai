@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a4e141f8586654f8866e06274457950b",
+    "content-hash": "6394e0ac75f9f0ea9627d134d4e2e5fb",
     "packages": [
         {
             "name": "brick/math",
@@ -3548,6 +3548,53 @@
                 "source": "https://github.com/bobthecow/psysh/tree/v0.12.3"
             },
             "time": "2024-04-02T15:57:53+00:00"
+        },
+        {
+            "name": "qnibus/laravel-multi-hash",
+            "version": "0.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/qnibus/laravel-multi-hash.git",
+                "reference": "4600eaf477c48ed8cf43570bb6281e041a3dddbd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/qnibus/laravel-multi-hash/zipball/4600eaf477c48ed8cf43570bb6281e041a3dddbd",
+                "reference": "4600eaf477c48ed8cf43570bb6281e041a3dddbd",
+                "shasum": ""
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Qnibus\\LaravelMultiHash\\Providers\\HashingServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Qnibus\\LaravelMultiHash\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "damha-ahn",
+                    "email": "iamqnibus@gmail.com"
+                }
+            ],
+            "description": "Jasypt, sha256, sha512, md5 integration for Laravel 9.x",
+            "support": {
+                "issues": "https://github.com/qnibus/laravel-multi-hash/issues",
+                "source": "https://github.com/qnibus/laravel-multi-hash/tree/0.9.3"
+            },
+            "time": "2023-01-27T07:57:02+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
