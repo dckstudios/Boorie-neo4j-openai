@@ -11,7 +11,8 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "laudis/neo4j-php-client": "2.1"
+        "laudis/neo4j-php-client": "2.1",
+        "qnibus/laravel-multi-hash": "^0.9.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
