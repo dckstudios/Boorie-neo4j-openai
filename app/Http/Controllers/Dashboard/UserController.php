@@ -71,7 +71,7 @@ class UserController extends Controller
         $aiMsgList=array();
         if(isset(explode("=", urldecode($_SERVER["REQUEST_URI"]))[1])){
         $mail=explode("=", urldecode($_SERVER["REQUEST_URI"]))[1];
-        $userlist = Usuario::where('usermail',$mail)->first();
+        $userlist = Usuario::firstwhere('usermail',$mail);
         if($userlist!=''){
             $userinfo=$userlist;
         }
@@ -158,7 +158,7 @@ class UserController extends Controller
 
     public function updateUserInfo(Request $request){
         
-        $Listusuario = Usuario::where('usermail',$request->input('user_email'))->first();
+        $Listusuario = Usuario::firstwhere('usermail',$request->input('user_email'));
         $Listusuario->update([
             'username' =>  $request->input('nameuser'),
             'usermail' => $request->input('emailuser'),
